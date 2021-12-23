@@ -1,10 +1,10 @@
 var snoowrap = require('snoowrap');
-const { user, pass } = require('./api_keys.json');
+const { user, pass, client_secret } = require('./api_keys.json');
 
 const r = new snoowrap({
     userAgent: 'discbot',
     clientId: 'g1bbyKZRmGKF1K9Ck7HDkw',
-    clientSecret: '38NkVIn8zsCpOLC81knSyN0cga8zCw',
+    clientSecret: client_secret,
     username: user,
     password: pass
   });
