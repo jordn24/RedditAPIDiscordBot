@@ -43,7 +43,8 @@ client.on('message', async message => {
       if (option == " "){
         option = "h"
       }
-
+	
+      if (input === prefix + ' ' + input){
       switch(input){
         case "5050": 
           getSubredditURL("FiftyFifty", option).then((output) => {
@@ -63,6 +64,7 @@ client.on('message', async message => {
             return
           }).catch(console.log)
       }
+    }
     }
 })
 
