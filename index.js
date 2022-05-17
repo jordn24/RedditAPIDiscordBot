@@ -22,12 +22,12 @@ client.on('message', async message => {
     // Help Commands
     if (message.content.toLowerCase() === prefix + ' help'){
         fields = [
-      {name: "Hot Page Reddit", value: "r [Subreddit_Name]"},
-      {name: "Top Page Reddit", value: "r t [Subreddit_Name]"},
-      {name: "Rising Page Reddit", value: "r r [Subreddit_Name]"},
-      {name: "New Page Reddit", value: "r n [Subreddit_Name]"},
-      {name: "Controversial Page Reddit", value: "r c [Subreddit_Name]"},
-      {name: "Secret Commands", value: "r help secret"},
+      {name: "Hot Page Reddit", value: "-r [Subreddit_Name]"},
+      {name: "Top Page Reddit", value: "-rt [Subreddit_Name]"},
+      {name: "Rising Page Reddit", value: "-rr [Subreddit_Name]"},
+      {name: "New Page Reddit", value: "-rn [Subreddit_Name]"},
+      {name: "Controversial Page Reddit", value: "-rc [Subreddit_Name]"},
+      {name: "Secret Commands", value: "-r help secret"},
 		  ]
 
       embed = new discord.MessageEmbed()
@@ -44,7 +44,7 @@ client.on('message', async message => {
         option = "h"
       }
 	
-      if (input === prefix + ' ' + input){
+      if (input === prefix + input){
       switch(input){
         case "5050": 
           getSubredditURL("FiftyFifty", option).then((output) => {
