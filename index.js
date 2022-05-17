@@ -27,7 +27,7 @@ client.on('message', async message => {
       {name: "Rising Page Reddit", value: "!r [Subreddit_Name]"},
       {name: "New Page Reddit", value: "!rn [Subreddit_Name]"},
       {name: "Controversial Page Reddit", value: "!rc [Subreddit_Name]"},
-      {name: "Secret Commands", value: "!r help secret"},
+      {name: "Secret Commands", value: "!r secret"},
 		  ]
 
       embed = new discord.MessageEmbed()
@@ -36,15 +36,14 @@ client.on('message', async message => {
       message.channel.send(embed)
     } else if (message.content.toLowerCase() === prefix + ' help secret'){
 		  message.channel.send("There are " + secretCmds + " secret command/s")
-    } else if (message.content.toLowerCase().startsWith(prefix + '')){
+    } else if (message.content.toLowerCase().startsWith(prefix + 'r')){
       var input = message.content.toLowerCase().substr(3).replace(/\s/g, '');
-      var option = message.content.toLowerCase()[1]
+      var option = message.content.toLowerCase()[2]
 
       if (option == " "){
         option = "h"
       }
 	
-      if (input === prefix + ' ' + input){
       switch(input){
         case "5050": 
           getSubredditURL("FiftyFifty", option).then((output) => {
@@ -64,7 +63,6 @@ client.on('message', async message => {
             return
           }).catch(console.log)
       }
-    }
     }
 })
 
