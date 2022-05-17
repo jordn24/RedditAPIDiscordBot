@@ -20,7 +20,7 @@ const r = new snoowrap({
 client.on('message', async message => {
 
     // Help Commands
-    if (message.content.toLowerCase() === prefix + ' help'){
+    if (message.content.toLowerCase() === prefix + 'rhelp'){
         fields = [
       {name: "Hot Page Reddit", value: "!r [Subreddit_Name]"},
       {name: "Top Page Reddit", value: "!rt [Subreddit_Name]"},
