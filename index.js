@@ -7,12 +7,12 @@ const client = new discord.Client();
 const { getSubredditURL } = require('./reddit');
 
 var snoowrap = require('snoowrap');
-const { user, pass } = require('./api_keys.json');
+const { user, pass, client_secret } = require('./api_keys.json');
 
 const r = new snoowrap({
     userAgent: 'discbot',
     clientId: 'g1bbyKZRmGKF1K9Ck7HDkw',
-    clientSecret: '38NkVIn8zsCpOLC81knSyN0cga8zCw',
+    clientSecret: client_secret,
     username: user,
     password: pass
   });
@@ -23,10 +23,10 @@ client.on('message', async message => {
     if (message.content.toLowerCase() === prefix + ' help'){
         fields = [
       {name: "Hot Page Reddit", value: "r [Subreddit_Name]"},
-      {name: "Top Page Reddit", value: "rt [Subreddit_Name]"},
-      {name: "Rising Page Reddit", value: "rr [Subreddit_Name]"},
-      {name: "New Page Reddit", value: "rn [Subreddit_Name]"},
-      {name: "Controversial Page Reddit", value: "rc [Subreddit_Name]"},
+      {name: "Top Page Reddit", value: "r t [Subreddit_Name]"},
+      {name: "Rising Page Reddit", value: "r r [Subreddit_Name]"},
+      {name: "New Page Reddit", value: "r n [Subreddit_Name]"},
+      {name: "Controversial Page Reddit", value: "r c [Subreddit_Name]"},
       {name: "Secret Commands", value: "r help secret"},
 		  ]
 
