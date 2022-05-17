@@ -26,17 +26,14 @@ client.on('message', async message => {
       {name: "Top Page Reddit", value: "!rt [Subreddit_Name]"},
       {name: "Rising Page Reddit", value: "!r [Subreddit_Name]"},
       {name: "New Page Reddit", value: "!rn [Subreddit_Name]"},
-      {name: "Controversial Page Reddit", value: "!rc [Subreddit_Name]"},
-      {name: "Secret Commands", value: "!r secret"},
+      {name: "Controversial Page Reddit", value: "!rc [Subreddit_Name]"}
 		  ]
 
       embed = new discord.MessageEmbed()
         .setTitle("R Commands")
         .addFields(fields)
       message.channel.send(embed)
-    } else if (message.content.toLowerCase() === prefix + ' help secret'){
-		  message.channel.send("There are " + secretCmds + " secret command/s")
-    } else if (message.content.toLowerCase().startsWith(prefix + 'r')){
+    } else if (message.content.toLowerCase().startsWith(prefix + 'r')) {
       var input = message.content.toLowerCase().substr(3).replace(/\s/g, '');
       var option = message.content.toLowerCase()[2]
 
