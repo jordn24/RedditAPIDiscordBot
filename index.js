@@ -44,6 +44,7 @@ client.on('message', async message => {
         option = "h"
       }
 	
+      if (input !== ""){
       switch(input){
         case "5050": 
           getSubredditURL("FiftyFifty", option).then((output) => {
@@ -62,6 +63,7 @@ client.on('message', async message => {
             message.channel.send(output)
             return
           }).catch(console.log)
+      }
       }
     }
 })
